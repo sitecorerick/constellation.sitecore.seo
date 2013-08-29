@@ -1,6 +1,8 @@
-﻿namespace Spark.Sitecore.Seo.Sitemaps.HttpHandlers
+﻿namespace Spark.Sitecore.Seo.HttpHandlers
 {
 	using System.Web;
+
+	using Spark.Sitecore.Seo.Sitemaps;
 
 	/// <summary>
 	/// Generates a sitemap.xml file for the sitecore site requested by the hostname component
