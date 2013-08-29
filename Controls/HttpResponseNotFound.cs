@@ -1,9 +1,11 @@
-﻿namespace ViridianSpark.Sitecore.Controls
+﻿namespace Spark.Sitecore.Seo.Controls
 {
 	/// <summary>
 	/// A Rendering that sets the status of the response to "404: Not Found".
 	/// </summary>
-	public class HttpResponseNotFound : Web.UI.HttpResponseNotFound
+	// ReSharper disable RedundantNameQualifier
+	public class HttpResponseNotFound : Spark.WebForms.Controls.HttpResponseNotFound
+	// ReSharper restore RedundantNameQualifier
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="HttpResponseNotFound"/> class.
