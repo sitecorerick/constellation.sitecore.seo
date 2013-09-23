@@ -1,7 +1,8 @@
-﻿namespace Spark.Sitecore.Seo.Sitemaps.HttpHandlers
+﻿namespace Spark.Sitecore.Seo.HttpHandlers
 {
 	using System.Text;
 	using System.Web;
+
 
 	/// <summary>
 	/// Handles requests for robots.txt and response with a reference to the hostname-specific
@@ -27,7 +28,27 @@
 		{
 			var builder = new StringBuilder();
 
+			var agents = RobotsTxtConfiguration.Settings.Agents;
+
+			for (int i = 0; i < agents.Count; i++)
+			{
+				var agent = agents[i];
+				builder.AppendLine("UserAgent: " + agent.Name);
+
+				if (!agent.Allowed)
+				{
+					builder.AppendLine("Disallow: /");
+				}
+
+			}
+
 			builder.AppendLine("User-agent: *");
+
+			if (!RobotsTxtConfiguration.Settings.Allowed)
+			{
+				builder.AppendLine("Disallow: /");
+			}
+
 			builder.AppendLine();
 			builder.AppendLine("Sitemap: " + context.Request.Url.GetLeftPart(System.UriPartial.Authority) + "/sitemap.xml");
 
