@@ -1,10 +1,10 @@
 ﻿namespace Spark.Sitecore.Seo.Rules.Actions
 {
-	using System.Diagnostics.CodeAnalysis;
 	using global::Sitecore;
 	using global::Sitecore.Data.Items;
 	using Spark.Sitecore.Rules.Actions;
 	using Spark.Sitecore.Seo;
+	using System.Diagnostics.CodeAnalysis;
 
 	/// <summary>
 	/// A Sitecore Rule Action that adjusts the name of an Item to support the desired URL-friendly parameters.
@@ -15,8 +15,17 @@
 	public class SetUrlFriendlyName<T> : RuleAction<T>
 		 where T : global::Sitecore.Rules.RuleContext
 	{
-		#region Properties
+		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="SetUrlFriendlyName{T}"/> class.
+		/// </summary>
+		public SetUrlFriendlyName()
+		{
+			this.DatabasesToProcess = "master";
+		}
+		#endregion
 
+		#region Properties
 		/// <summary>
 		/// Gets or sets a value indicating whether to replace diacritics from name or not.
 		/// </summary>
@@ -47,16 +56,6 @@
 		/// Options are force lowercase or preserve existing case.
 		/// </summary>
 		public ItemNameManager.CaseHandling ChangeCase { get; set; }
-		#endregion
-
-		#region Constructors
-		/// <summary>
-		/// Initializes a new instance of the <see cref="SetUrlFriendlyName{T}"/> class.
-		/// </summary>
-		public SetUrlFriendlyName()
-		{
-			this.DatabasesToProcess = "master";
-		}
 		#endregion
 
 		#region Methods
