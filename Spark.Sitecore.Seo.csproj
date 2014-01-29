@@ -30,8 +30,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\Diamond\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark.Html">
+      <HintPath>packages\Spark.Html.1.0.5141.21250\lib\net45\Spark.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark.Sitecore">
+      <HintPath>packages\Spark.Sitecore.1.0.5141.22776\lib\net45\Spark.Sitecore.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark.Web">
+      <HintPath>packages\Spark.Web.1.0.5141.28331\lib\net45\Spark.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Spark.WebForms">
+      <HintPath>packages\Spark.WebForms.1.0.5141.28929\lib\net45\Spark.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -64,16 +79,16 @@
     <Compile Include="Sitemaps\SitemapNode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spark.Sitecore\Spark.Sitecore.csproj">
-      <Project>{d6a1591a-d26d-4afa-aa14-13659986ee07}</Project>
-      <Name>Spark.Sitecore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Spark.WebForms\Spark.WebForms.csproj">
-      <Project>{a2c538ab-61bb-4ed2-a7f8-0757a7155375}</Project>
-      <Name>Spark.WebForms</Name>
-    </ProjectReference>
+    <Content Include="Spark.Html.License.txt" />
+    <Content Include="Spark.Sitecore.License.txt" />
+    <Content Include="Spark.Sitecore.Seo.License.txt" />
+    <Content Include="Spark.Web.License.txt" />
+    <Content Include="Spark.WebForms.License.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Spark.Sitecore.Seo.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

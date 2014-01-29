@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Spark.Sitecore</id>
+    <version>1.0.5141.22776</version>
+    <title>Spark.Sitecore</title>
+    <authors>Richard J. Cabral</authors>
+    <owners>Richard J. Cabral</owners>
+    <projectUrl>https://github.com/sitecorerick/spark_sitecore</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Spark contains a number of very useful Sitecore utilities They include:
+		
+		A Datasource Resolver that automatically escapes XPath statements for use by "query" and "fast"
+		
+		A rule and event framework that allows programmers to explicitly specify required conditions for parameters that are typically not specified in the pipeline, such as database, site, and language.
+		
+		Extensions to Language that make it easier to transition between ISO-codes, Language Items and Globalization.Language objects.
+		
+		A handful of Rules for automatically moving Items to appropriate subfolders to create blog-like URLs.</description>
+    <summary>A Sitecore extension library used by the Spark namespace.</summary>
+    <releaseNotes>Initial NuGet release.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Sitecore</tags>
+  </metadata>
+</package>
