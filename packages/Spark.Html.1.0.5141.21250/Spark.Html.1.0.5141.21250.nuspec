@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Spark.Html</id>
+    <version>1.0.5141.21250</version>
+    <title>Spark.Html</title>
+    <authors>Richard J. Cabral</authors>
+    <owners>Richard J. Cabral</owners>
+    <projectUrl>https://github.com/sitecorerick/diamond</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Spark.Html contains a number of extension methods for HtmlTextWriter. Internally these methods use an IDisposable pattern to encapsulate the rather cumbersome code for adding attributes, rendering the begin tag, and rendering the end tag.
+		
+		The extension methods should generally be called as part of a "using" statement. ex: using (writer.RenderDiv()) { }
+		
+		The result is C# code for rendering HTML that is very easy to read, fully supports the ASP.NET browser capabilities feature, and is flexible enough to handle new tags invented in the future.</description>
+    <summary>A .NET library to increase the utility and efficiency of HtmlTextWriter</summary>
+    <releaseNotes>Formally released to GitHub</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Sitecore</tags>
+  </metadata>
+</package>

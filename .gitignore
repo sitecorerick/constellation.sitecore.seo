@@ -1,0 +1,54 @@
+#folders
+[Bb]in
+Databases/
+[Bb]in/[Dd]ebug*/
+!*.Web/[Ss]itecore*/[Dd]ebug/
+obj/
+[Bb]in/[Rr]elease*/
+_ReSharper*/
+
+#files
+*.[Dd]ebug.config
+Thumbs.db
+[Tt]est[Rr]esult*
+*.Web/[Ww]eb.[Cc]onfig
+
+
+#extensions
+*_i.c
+*_p.c
+*.aps
+*.bak
+*.cache
+*.docstates
+*.exe
+*.ilk
+*.lib
+*.log
+*.ncb
+*.obj
+*.pch
+*.pdb
+*.sbr
+*.suo
+*.tlb
+*.tlh
+*.tmp
+*.user
+*.vspscc
+
+#TDS Specific
+/TDS.*/*
+# except for the scproj file and the serialization folder
+!/TDS.*/sitecore
+!/TDS.*/*.csproj
+!/TDS.*/*.scproj
+!/TDS.*/Code Generation Templates
+
+#Glass Specific
+/*.Data/*.Items.cs
+/*.Data/*.Items.*.cs
+/*.Data/Items.cs
+
+#Diamond Specific
+/*.Data/Items/_Generated.cs

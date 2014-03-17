@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Spark.Web</id>
+    <version>1.0.5141.28331</version>
+    <title>Spark.Web</title>
+    <authors>Richard J. Cabral</authors>
+    <owners>Richard J. Cabral</owners>
+    <projectUrl>https://github.com/sitecorerick/spark-web</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This library contains the following useful classes:
+		
+		Querystring Helper: Allows for easy appending, concatenating, and manipulating Querystrings.
+		
+		UrlHelper: Manages Querystring parameters through the URL objects.
+		
+		Pagination: Headless logic for producing web pages that support paginated result sets.</description>
+    <summary>Some basic ASP.NET utilities. This is a core library for other Spark namespaces.</summary>
+    <releaseNotes>Initial NuGet release.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Spark</tags>
+  </metadata>
+</package>
