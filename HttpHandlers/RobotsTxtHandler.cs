@@ -1,4 +1,4 @@
-﻿namespace Spark.Sitecore.Seo.HttpHandlers
+﻿namespace Constellation.Sitecore.HttpHandlers
 {
 	using System.Text;
 	using System.Web;
@@ -28,7 +28,7 @@
 		{
 			var builder = new StringBuilder();
 
-			var agents = RobotsTxtConfiguration.Settings.Agents;
+			var agents = RobotsTxt.Configuration.Settings.Agents;
 
 			for (int i = 0; i < agents.Count; i++)
 			{
@@ -44,7 +44,7 @@
 
 			builder.AppendLine("User-agent: *");
 
-			if (!RobotsTxtConfiguration.Settings.Allowed)
+			if (!RobotsTxt.Configuration.Settings.Allowed)
 			{
 				builder.AppendLine("Disallow: /");
 			}

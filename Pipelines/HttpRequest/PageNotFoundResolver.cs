@@ -1,13 +1,10 @@
-﻿namespace Spark.Sitecore.Seo.Pipelines.HttpRequest
+﻿namespace Constellation.Sitecore.Pipelines.HttpRequest
 {
-	using System.Web;
-
 	using global::Sitecore.Configuration;
 	using global::Sitecore.Data.Items;
 	using global::Sitecore.Diagnostics;
 	using global::Sitecore.Pipelines.HttpRequest;
-
-	using HttpRequestProcessor = Spark.Sitecore.Pipelines.HttpRequest.HttpRequestProcessor;
+	using System.Web;
 
 	/// <summary>
 	/// In the instance where a URL represents an Item, but the Item does not exist,
@@ -26,7 +23,7 @@
 	/// </para>
 	/// <para>
 	/// Step 2: Create a Rendering (WebControl type) named "Not Found". Use the following WebControl:
-	/// <c>Spark.Sitecore.Seo.Controls.HttpResponsesNotFound, Spark.Sitecore</c>
+	/// <c>Constellation.Sitecore.Seo.Controls.HttpResponsesNotFound, Constellation.Sitecore</c>
 	/// This control is necessary to set the 404 response code, which must be set during the rendering of the handling page.
 	/// </para>
 	/// <para>
@@ -39,7 +36,7 @@
 	/// </para>
 	/// <para>
 	/// 4.A: Install the following Processor in the HttpRequestBegin pipeline immediately after ItemResolver.
-	/// <c>&lt;processor type="Spark.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Spark.Sitecore" /&gt;</c>
+	/// <c>&lt;processor type="Constellation.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Constellation.Sitecore" /&gt;</c>
 	/// </para>
 	/// <para>
 	/// 4.B: Change the <c>ItemNotFoundUrl</c> setting value to match the root-relative path to your not-found item, 

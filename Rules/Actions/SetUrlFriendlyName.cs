@@ -1,9 +1,8 @@
-﻿namespace Spark.Sitecore.Seo.Rules.Actions
+﻿namespace Constellation.Sitecore.Rules.Actions
 {
+	using Constellation.Sitecore.Seo;
 	using global::Sitecore;
 	using global::Sitecore.Data.Items;
-	using Spark.Sitecore.Rules.Actions;
-	using Spark.Sitecore.Seo;
 	using System.Diagnostics.CodeAnalysis;
 
 	/// <summary>

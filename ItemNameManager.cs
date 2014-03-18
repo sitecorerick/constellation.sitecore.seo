@@ -1,4 +1,4 @@
-﻿namespace Spark.Sitecore.Seo
+﻿namespace Constellation.Sitecore.Seo
 {
 	using System;
 	using System.Diagnostics.CodeAnalysis;

@@ -1,8 +1,8 @@
-﻿namespace Spark.Sitecore.Seo.HttpHandlers
+﻿namespace Constellation.Sitecore.HttpHandlers
 {
-	using System.Web;
+	using Constellation.Sitecore.HttpHandlers.SitemapXml;
 
-	using Spark.Sitecore.Seo.Sitemaps;
+	using System.Web;
 
 	/// <summary>
 	/// Generates a sitemap.xml file for the sitecore site requested by the hostname component
