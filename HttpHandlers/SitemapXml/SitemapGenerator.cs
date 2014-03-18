@@ -65,7 +65,7 @@
 				if (site != null)
 				{
 					// start recursing through the site's items
-					var usethiscrawler = Type.GetType(Configuration.Settings.Crawler);
+					var usethiscrawler = Type.GetType(Configuration.Settings.CrawlerType);
 
 					if (usethiscrawler == null)
 					{

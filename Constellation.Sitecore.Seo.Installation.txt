@@ -1,0 +1,27 @@
+﻿Installation Instructions
+=========================
+
+To utilize the RobotsTxtHandler and/or the SitemapXmlHandler, the following config sections need to be in place:
+
+* constellation/robotsTxtHandler
+* constellation/sitemapXmlHandler
+
+Examples below:
+
+<sectionGroup name="spark">
+	<section name="robotsTxtHandler" type="Constellation.Sitecore.HttpHandlers.RobotsTxt.Configuration, Constellation.Sitecore.Seo"/>
+	<section name="sitemapXmlHandler" type="Constellation.Sitecore.HttpHandlers.SitemapXml.Configuration, Constellation.Sitecore.Seo"/>
+</sectionGroup>
+
+
+<constellation>
+	<sitemapXmlHandler 
+		sitemapNodeType="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultSitemapNode, Constellation.Sitecore.Seo" 
+		crawlerType="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo"
+		cacheTimeout="45"
+	/>
+	<robotsTxtHandler allowed="true">
+		<add name="xenu" allowed="false" />
+	</robotsTxtHandler>
+</constellation>
+

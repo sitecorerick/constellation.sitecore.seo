@@ -79,11 +79,10 @@
     <Compile Include="HttpHandlers\SitemapXml\SitemapNode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Constellation.Html.License.txt" />
-    <Content Include="Constellation.Sitecore.License.txt" />
     <Content Include="Constellation.Sitecore.Seo.License.txt" />
-    <Content Include="Constellation.Web.License.txt" />
-    <Content Include="Constellation.WebForms.License.txt" />
+    <Content Include="Constellation.Sitecore.Seo.Installation.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Constellation.Sitecore.Seo.nuspec" />

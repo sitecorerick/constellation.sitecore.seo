@@ -10,7 +10,7 @@
 	<requireLicenseAcceptance>false</requireLicenseAcceptance>
 	<summary>A number of SEO-specific modules for Sitecore.</summary>
 	<description>
-		This library supports a number of regularly-requested SEO features, implemented in Sitecore. Some of these have been implemented elsewhere, but I believe my approach
+		This library supports a number of regularly-requested SEO features, implemented in Sitecore. Some of these have been implemented elsewhere, this approach
 		is stronger for multi-site, multi-language installations.
 		
 		Features Included: 

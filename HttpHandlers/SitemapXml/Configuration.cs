@@ -36,11 +36,11 @@
 		/// <summary>
 		/// Gets or sets the crawler.
 		/// </summary>
-		[ConfigurationProperty("crawler", DefaultValue = "Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo", IsRequired = false)]
-		public string Crawler
+		[ConfigurationProperty("crawlerType", DefaultValue = "Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo", IsRequired = false)]
+		public string CrawlerType
 		{
-			get { return (string)this["crawler"]; }
-			set { this["crawler"] = value; }
+			get { return (string)this["crawlerType"]; }
+			set { this["crawlerType"] = value; }
 		}
 
 		/// <summary>
