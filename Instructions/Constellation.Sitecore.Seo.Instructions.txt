@@ -1,5 +1,5 @@
-﻿Installation Instructions
-=========================
+﻿Instructions
+============
 
 To utilize the RobotsTxtHandler and/or the SitemapXmlHandler, the following config sections need to be in place:
 

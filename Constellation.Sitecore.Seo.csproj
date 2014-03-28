@@ -59,6 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
+    </Compile>
     <Compile Include="Renderings\HttpResponseNotFound.cs" />
     <Compile Include="HttpHandlers\RobotsTxt\Configuration.cs" />
     <Compile Include="HttpHandlers\RobotsTxtHandler.cs" />
@@ -79,14 +84,31 @@
     <Compile Include="HttpHandlers\SitemapXml\SitemapNode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Constellation.Sitecore.Seo.License.txt" />
-    <Content Include="Constellation.Sitecore.Seo.Installation.txt">
+    <Content Include="License\Constellation.Sitecore.Seo.License.txt" />
+    <Content Include="Instructions\Constellation.Sitecore.Seo.Instructions.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd">
+      <Generator>CsdFileGenerator</Generator>
+      <LastGenOutput>Constellation.Sitecore.Seo.csd.cs</LastGenOutput>
+    </None>
+    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.config">
+      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
+    </None>
+    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.diagram">
+      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
+    </None>
+    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.xsd">
+      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Constellation.Sitecore.Seo.nuspec" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
