@@ -19,7 +19,7 @@
 		Automatic Sitemap.xml support - fully multi-site capable; can be configured to support a wide array of information architectures.
 		Rule-based approach to ensuring that Sitecore Items get the most url-friendly name possible.
 	</description>
-	<releaseNotes>Initial NuGet Release</releaseNotes>
+	<releaseNotes>Updated to Constellation 1.5</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore</tags>
   </metadata>

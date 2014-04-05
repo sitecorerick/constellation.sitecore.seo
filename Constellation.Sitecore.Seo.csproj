@@ -11,6 +11,8 @@
     <AssemblyName>Constellation.Sitecore.Seo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,11 +32,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Constellation.Sitecore">
-      <HintPath>packages\Constellation.Sitecore.1.0.5189.27028\lib\net45\Constellation.Sitecore.dll</HintPath>
+    <Reference Include="Constellation.Html">
+      <HintPath>packages\Constellation.Html.1.5.5208.23634\lib\net45\Constellation.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Constellation.WebForms">
-      <HintPath>packages\Constellation.WebForms.1.0.5189.25409\lib\net45\Constellation.WebForms.dll</HintPath>
+    <Reference Include="Constellation.Sitecore, Version=1.5.5208.24086, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Constellation.Sitecore.1.5.5208.24086\lib\net45\Constellation.Sitecore.dll</HintPath>
+    </Reference>
+    <Reference Include="Constellation.Web">
+      <HintPath>packages\Constellation.Web.1.5.5208.23164\lib\net45\Constellation.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Constellation.WebForms, Version=1.5.5208.23871, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Constellation.WebForms.1.5.5208.23871\lib\net45\Constellation.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Diamond\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -68,10 +78,18 @@
     <Compile Include="HttpHandlers\SitemapXml\SitemapNode.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Instructions\Constellation.Html.Instructions.txt" />
+    <Content Include="Instructions\Constellation.Sitecore.Instructions.txt" />
+    <Content Include="Instructions\Constellation.Web.Instructions.txt" />
+    <Content Include="Instructions\Constellation.WebForms.Instructions.txt" />
+    <Content Include="License\Constellation.Html.License.txt" />
+    <Content Include="License\Constellation.Sitecore.License.txt" />
     <Content Include="License\Constellation.Sitecore.Seo.License.txt" />
     <Content Include="Instructions\Constellation.Sitecore.Seo.Instructions.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="License\Constellation.Web.License.txt" />
+    <Content Include="License\Constellation.WebForms.License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Constellation.Sitecore.RobotsTxtHandler.config.Example" />
@@ -97,6 +115,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

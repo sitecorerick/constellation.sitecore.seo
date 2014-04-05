@@ -1,0 +1,11 @@
+﻿Instructions
+============
+
+Pagination
+----------
+Create a class descended from IPaginationControl. Implementation should be quite straightforward.
+
+Querystring/URL Management
+--------------------------
+To get a wealth of tools that help with Query Strings. Create an instance of QueryStringHelper.
+UrlHelper can be used to tack Query Strings to your URLs.

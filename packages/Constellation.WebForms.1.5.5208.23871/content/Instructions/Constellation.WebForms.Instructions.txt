@@ -1,0 +1,15 @@
+﻿Instructions
+============
+
+HttpResponseStatus
+------------------
+Use these controls to change the HttpResponseStatus of a page. Due to the nature of ASP.NET web requests, it's not a 
+good idea to attempt to change the response status anywhere further up the request pipeline if you want to deliver
+a custom error experience that requires some intelligence.
+
+HttpResponseStatusNotFound is an example control and can be placed on pages designed to handle 404 conditions.
+
+CompressedViewStatePage
+-----------------------
+Uses SharpZipLib to compress the ViewState field contents of a page. This is a drop-in replacement for the default
+System.Web.Page class and should be used with wild abandon to decrease the size of traditional ASP.NET web pages.

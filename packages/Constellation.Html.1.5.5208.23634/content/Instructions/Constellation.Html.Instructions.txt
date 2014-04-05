@@ -1,0 +1,39 @@
+﻿Instructions
+============
+Use this library to enhance the use of HtmlTextWriter by including the Constellation.Html
+namespace in your controls.
+
+Example
+-------
+
+namespace Example
+{
+	using System.Web.UI;
+	using System.Web.UI.WebControls;
+	using Constellation.Html;
+
+	public class ExampleControl : WebControl
+	{
+		public override void RenderControl(HtmlTextWriter writer)
+		{
+			using (writer.RenderDiv(id: "someid", cssClass: "someclass"))
+			{
+				using (writer.RenderP())
+				{
+					writer.Write("this is the inner text of the paragraph.");
+					writer.RenderImg("/blank.gif", "alternate descriptive text", id:"imageid", cssClass:"imagecssclass");
+				}
+			}
+		}
+	}
+}
+
+Example Output
+--------------
+
+<div id="someid" class="someclass">
+	<p>
+		this is the inner text of the paragraph.
+		<img src="/blank.gif" alt="alternate descriptive text" id="imageid" class="imagecssclass" />
+	</p>
+</div>
