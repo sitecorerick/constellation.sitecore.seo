@@ -12,7 +12,7 @@ _ReSharper*/
 Thumbs.db
 [Tt]est[Rr]esult*
 *.Web/[Ww]eb.[Cc]onfig
-
+*.nupkg
 
 #extensions
 *_i.c
@@ -37,15 +37,4 @@ Thumbs.db
 *.user
 *.vspscc
 
-#TDS Specific
-/TDS.*/*
-# except for the scproj file and the serialization folder
-!/TDS.*/sitecore
-!/TDS.*/*.csproj
-!/TDS.*/*.scproj
-!/TDS.*/Code Generation Templates
 
-#Diamond Specific
-/*.Data/Items/_Generated.cs
-
-*.nupkg
