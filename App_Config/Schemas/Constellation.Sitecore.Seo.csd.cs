@@ -8,32 +8,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Constellation.Sitecore.App_Config.Schemas
+namespace Constellation.Sitecore.Seo
 {
     
     
     /// <summary>
-    /// The SitemapXmlHandler Configuration Section.
+    /// The SitemapXmlHandlerConfiguration Configuration Section.
     /// </summary>
-    public partial class SitemapXmlHandler : global::System.Configuration.ConfigurationSection
+    public partial class SitemapXmlHandlerConfiguration : global::System.Configuration.ConfigurationSection
     {
         
         #region Singleton Instance
         /// <summary>
-        /// The XML name of the SitemapXmlHandler Configuration Section.
+        /// The XML name of the SitemapXmlHandlerConfiguration Configuration Section.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        internal const string SitemapXmlHandlerSectionName = "sitemapXmlHandler";
+        internal const string SitemapXmlHandlerConfigurationSectionName = "sitemapXmlHandler";
         
         /// <summary>
-        /// Gets the SitemapXmlHandler instance.
+        /// Gets the SitemapXmlHandlerConfiguration instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public static global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler Instance
+        public static global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration Instance
         {
             get
             {
-                return ((global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler)(global::System.Configuration.ConfigurationManager.GetSection(global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.SitemapXmlHandlerSectionName)));
+                return ((global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration)(global::System.Configuration.ConfigurationManager.GetSection(global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.SitemapXmlHandlerConfigurationSectionName)));
             }
         }
         #endregion
@@ -53,12 +53,12 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// the parser doesn't throw an exception because it encounters the unknown "xmlns" attribute.
         /// </remarks>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.XmlnsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.XmlnsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string Xmlns
         {
             get
             {
-                return ((string)(base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.XmlnsPropertyName]));
+                return ((string)(base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.XmlnsPropertyName]));
             }
         }
         #endregion
@@ -87,16 +87,16 @@ namespace Constellation.Sitecore.App_Config.Schemas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The SitemapNodeType.")]
         [global::System.ComponentModel.TypeConverter(typeof(global::System.Configuration.TypeNameConverter))]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.SitemapNodeTypePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultSitemapNode, Constellation.Sitecore.Seo)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.SitemapNodeTypePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultSitemapNode, Constellation.Sitecore.Seo")]
         public virtual global::System.Type SitemapNodeType
         {
             get
             {
-                return ((global::System.Type)(base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.SitemapNodeTypePropertyName]));
+                return ((global::System.Type)(base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.SitemapNodeTypePropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.SitemapNodeTypePropertyName] = value;
+                base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.SitemapNodeTypePropertyName] = value;
             }
         }
         #endregion
@@ -114,16 +114,16 @@ namespace Constellation.Sitecore.App_Config.Schemas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The CrawlerType.")]
         [global::System.ComponentModel.TypeConverter(typeof(global::System.Configuration.TypeNameConverter))]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.CrawlerTypePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.CrawlerTypePropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo")]
         public virtual global::System.Type CrawlerType
         {
             get
             {
-                return ((global::System.Type)(base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.CrawlerTypePropertyName]));
+                return ((global::System.Type)(base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.CrawlerTypePropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.CrawlerTypePropertyName] = value;
+                base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.CrawlerTypePropertyName] = value;
             }
         }
         #endregion
@@ -140,47 +140,47 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The CacheTimeoutMinutes.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.CacheTimeoutMinutesPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=30)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.CacheTimeoutMinutesPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false, DefaultValue=30)]
         public virtual int CacheTimeoutMinutes
         {
             get
             {
-                return ((int)(base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.CacheTimeoutMinutesPropertyName]));
+                return ((int)(base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.CacheTimeoutMinutesPropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandler.CacheTimeoutMinutesPropertyName] = value;
+                base[global::Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration.CacheTimeoutMinutesPropertyName] = value;
             }
         }
         #endregion
     }
 }
-namespace Constellation.Sitecore.App_Config.Schemas
+namespace Constellation.Sitecore.Seo
 {
     
     
     /// <summary>
-    /// The RobotsTxtHandler Configuration Section.
+    /// The RobotsTxtHandlerConfiguration Configuration Section.
     /// </summary>
-    public partial class RobotsTxtHandler : global::System.Configuration.ConfigurationSection
+    public partial class RobotsTxtHandlerConfiguration : global::System.Configuration.ConfigurationSection
     {
         
         #region Singleton Instance
         /// <summary>
-        /// The XML name of the RobotsTxtHandler Configuration Section.
+        /// The XML name of the RobotsTxtHandlerConfiguration Configuration Section.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        internal const string RobotsTxtHandlerSectionName = "robotsTxtHandler";
+        internal const string RobotsTxtHandlerConfigurationSectionName = "robotsTxtHandler";
         
         /// <summary>
-        /// Gets the RobotsTxtHandler instance.
+        /// Gets the RobotsTxtHandlerConfiguration instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public static global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler Instance
+        public static global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration Instance
         {
             get
             {
-                return ((global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler)(global::System.Configuration.ConfigurationManager.GetSection(global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.RobotsTxtHandlerSectionName)));
+                return ((global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration)(global::System.Configuration.ConfigurationManager.GetSection(global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.RobotsTxtHandlerConfigurationSectionName)));
             }
         }
         #endregion
@@ -200,12 +200,12 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// the parser doesn't throw an exception because it encounters the unknown "xmlns" attribute.
         /// </remarks>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.XmlnsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.XmlnsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string Xmlns
         {
             get
             {
-                return ((string)(base[global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.XmlnsPropertyName]));
+                return ((string)(base[global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.XmlnsPropertyName]));
             }
         }
         #endregion
@@ -233,16 +233,16 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The Allowed.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.AllowedPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=true)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.AllowedPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=true)]
         public virtual bool Allowed
         {
             get
             {
-                return ((bool)(base[global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.AllowedPropertyName]));
+                return ((bool)(base[global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.AllowedPropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.AllowedPropertyName] = value;
+                base[global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.AllowedPropertyName] = value;
             }
         }
         #endregion
@@ -259,35 +259,35 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The RobotRules.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.RobotRulesPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=true)]
-        public virtual global::Constellation.Sitecore.App_Config.Schemas.RobotRules RobotRules
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.RobotRulesPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=true)]
+        public virtual global::Constellation.Sitecore.RobotRules RobotRules
         {
             get
             {
-                return ((global::Constellation.Sitecore.App_Config.Schemas.RobotRules)(base[global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.RobotRulesPropertyName]));
+                return ((global::Constellation.Sitecore.RobotRules)(base[global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.RobotRulesPropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandler.RobotRulesPropertyName] = value;
+                base[global::Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration.RobotRulesPropertyName] = value;
             }
         }
         #endregion
     }
 }
-namespace Constellation.Sitecore.App_Config.Schemas
+namespace Constellation.Sitecore
 {
     
     
     /// <summary>
     /// A collection of RobotRule instances.
     /// </summary>
-    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::Constellation.Sitecore.App_Config.Schemas.RobotRule), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate, AddItemName=global::Constellation.Sitecore.App_Config.Schemas.RobotRules.RobotRulePropertyName)]
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::Constellation.Sitecore.RobotRule), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMapAlternate, AddItemName="add", RemoveItemName="remove", ClearItemsName="clear")]
     public partial class RobotRules : global::System.Configuration.ConfigurationElementCollection
     {
         
         #region Constants
         /// <summary>
-        /// The XML name of the individual <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> instances in this collection.
+        /// The XML name of the individual <see cref="global::Constellation.Sitecore.RobotRule"/> instances in this collection.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         internal const string RobotRulePropertyName = "robotRule";
@@ -303,7 +303,7 @@ namespace Constellation.Sitecore.App_Config.Schemas
         {
             get
             {
-                return global::System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate;
+                return global::System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMapAlternate;
             }
         }
         
@@ -315,7 +315,7 @@ namespace Constellation.Sitecore.App_Config.Schemas
         {
             get
             {
-                return global::Constellation.Sitecore.App_Config.Schemas.RobotRules.RobotRulePropertyName;
+                return global::Constellation.Sitecore.RobotRules.RobotRulePropertyName;
             }
         }
         
@@ -329,7 +329,7 @@ namespace Constellation.Sitecore.App_Config.Schemas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         protected override bool IsElementName(string elementName)
         {
-            return (elementName == global::Constellation.Sitecore.App_Config.Schemas.RobotRules.RobotRulePropertyName);
+            return (elementName == global::Constellation.Sitecore.RobotRules.RobotRulePropertyName);
         }
         
         /// <summary>
@@ -342,57 +342,57 @@ namespace Constellation.Sitecore.App_Config.Schemas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
         {
-            return ((global::Constellation.Sitecore.App_Config.Schemas.RobotRule)(element)).Name;
+            return ((global::Constellation.Sitecore.RobotRule)(element)).Name;
         }
         
         /// <summary>
-        /// Creates a new <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/>.
+        /// Creates a new <see cref="global::Constellation.Sitecore.RobotRule"/>.
         /// </summary>
         /// <returns>
-        /// A new <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/>.
+        /// A new <see cref="global::Constellation.Sitecore.RobotRule"/>.
         /// </returns>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         protected override global::System.Configuration.ConfigurationElement CreateNewElement()
         {
-            return new global::Constellation.Sitecore.App_Config.Schemas.RobotRule();
+            return new global::Constellation.Sitecore.RobotRule();
         }
         #endregion
         
         #region Indexer
         /// <summary>
-        /// Gets the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> at the specified index.
+        /// Gets the <see cref="global::Constellation.Sitecore.RobotRule"/> at the specified index.
         /// </summary>
-        /// <param name="index">The index of the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to retrieve.</param>
+        /// <param name="index">The index of the <see cref="global::Constellation.Sitecore.RobotRule"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public global::Constellation.Sitecore.App_Config.Schemas.RobotRule this[int index]
+        public global::Constellation.Sitecore.RobotRule this[int index]
         {
             get
             {
-                return ((global::Constellation.Sitecore.App_Config.Schemas.RobotRule)(base.BaseGet(index)));
+                return ((global::Constellation.Sitecore.RobotRule)(base.BaseGet(index)));
             }
         }
         
         /// <summary>
-        /// Gets the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> with the specified key.
+        /// Gets the <see cref="global::Constellation.Sitecore.RobotRule"/> with the specified key.
         /// </summary>
-        /// <param name="name">The key of the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to retrieve.</param>
+        /// <param name="name">The key of the <see cref="global::Constellation.Sitecore.RobotRule"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public global::Constellation.Sitecore.App_Config.Schemas.RobotRule this[object name]
+        public global::Constellation.Sitecore.RobotRule this[object name]
         {
             get
             {
-                return ((global::Constellation.Sitecore.App_Config.Schemas.RobotRule)(base.BaseGet(name)));
+                return ((global::Constellation.Sitecore.RobotRule)(base.BaseGet(name)));
             }
         }
         #endregion
         
         #region Add
         /// <summary>
-        /// Adds the specified <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// Adds the specified <see cref="global::Constellation.Sitecore.RobotRule"/> to the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
-        /// <param name="robotRule">The <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to add.</param>
+        /// <param name="robotRule">The <see cref="global::Constellation.Sitecore.RobotRule"/> to add.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public void Add(global::Constellation.Sitecore.App_Config.Schemas.RobotRule robotRule)
+        public void Add(global::Constellation.Sitecore.RobotRule robotRule)
         {
             base.BaseAdd(robotRule);
         }
@@ -400,11 +400,11 @@ namespace Constellation.Sitecore.App_Config.Schemas
         
         #region Remove
         /// <summary>
-        /// Removes the specified <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> from the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// Removes the specified <see cref="global::Constellation.Sitecore.RobotRule"/> from the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
-        /// <param name="robotRule">The <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to remove.</param>
+        /// <param name="robotRule">The <see cref="global::Constellation.Sitecore.RobotRule"/> to remove.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public void Remove(global::Constellation.Sitecore.App_Config.Schemas.RobotRule robotRule)
+        public void Remove(global::Constellation.Sitecore.RobotRule robotRule)
         {
             base.BaseRemove(this.GetElementKey(robotRule));
         }
@@ -412,23 +412,23 @@ namespace Constellation.Sitecore.App_Config.Schemas
         
         #region GetItem
         /// <summary>
-        /// Gets the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> at the specified index.
+        /// Gets the <see cref="global::Constellation.Sitecore.RobotRule"/> at the specified index.
         /// </summary>
-        /// <param name="index">The index of the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to retrieve.</param>
+        /// <param name="index">The index of the <see cref="global::Constellation.Sitecore.RobotRule"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public global::Constellation.Sitecore.App_Config.Schemas.RobotRule GetItemAt(int index)
+        public global::Constellation.Sitecore.RobotRule GetItemAt(int index)
         {
-            return ((global::Constellation.Sitecore.App_Config.Schemas.RobotRule)(base.BaseGet(index)));
+            return ((global::Constellation.Sitecore.RobotRule)(base.BaseGet(index)));
         }
         
         /// <summary>
-        /// Gets the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> with the specified key.
+        /// Gets the <see cref="global::Constellation.Sitecore.RobotRule"/> with the specified key.
         /// </summary>
-        /// <param name="name">The key of the <see cref="global::Constellation.Sitecore.App_Config.Schemas.RobotRule"/> to retrieve.</param>
+        /// <param name="name">The key of the <see cref="global::Constellation.Sitecore.RobotRule"/> to retrieve.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
-        public global::Constellation.Sitecore.App_Config.Schemas.RobotRule GetItemByKey(string name)
+        public global::Constellation.Sitecore.RobotRule GetItemByKey(string name)
         {
-            return ((global::Constellation.Sitecore.App_Config.Schemas.RobotRule)(base.BaseGet(((object)(name)))));
+            return ((global::Constellation.Sitecore.RobotRule)(base.BaseGet(((object)(name)))));
         }
         #endregion
         
@@ -444,7 +444,7 @@ namespace Constellation.Sitecore.App_Config.Schemas
         #endregion
     }
 }
-namespace Constellation.Sitecore.App_Config.Schemas
+namespace Constellation.Sitecore
 {
     
     
@@ -477,16 +477,16 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The Name.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.RobotRule.NamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.RobotRule.NamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
         public virtual string Name
         {
             get
             {
-                return ((string)(base[global::Constellation.Sitecore.App_Config.Schemas.RobotRule.NamePropertyName]));
+                return ((string)(base[global::Constellation.Sitecore.RobotRule.NamePropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.RobotRule.NamePropertyName] = value;
+                base[global::Constellation.Sitecore.RobotRule.NamePropertyName] = value;
             }
         }
         #endregion
@@ -503,16 +503,16 @@ namespace Constellation.Sitecore.App_Config.Schemas
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.1.0")]
         [global::System.ComponentModel.DescriptionAttribute("The Allowed.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.App_Config.Schemas.RobotRule.AllowedPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::Constellation.Sitecore.RobotRule.AllowedPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
         public virtual bool Allowed
         {
             get
             {
-                return ((bool)(base[global::Constellation.Sitecore.App_Config.Schemas.RobotRule.AllowedPropertyName]));
+                return ((bool)(base[global::Constellation.Sitecore.RobotRule.AllowedPropertyName]));
             }
             set
             {
-                base[global::Constellation.Sitecore.App_Config.Schemas.RobotRule.AllowedPropertyName] = value;
+                base[global::Constellation.Sitecore.RobotRule.AllowedPropertyName] = value;
             }
         }
         #endregion

@@ -1,12 +1,12 @@
 ﻿namespace Constellation.Sitecore.HttpHandlers.SitemapXml
 {
+	using Constellation.Sitecore.Seo;
+
 	using global::Sitecore.Data.Items;
 	using global::Sitecore.Sites;
 	using System;
-	using System.Configuration;
 	using System.Diagnostics.CodeAnalysis;
 	using System.Globalization;
-	using System.Reflection;
 	using System.Web;
 	using System.Xml;
 
@@ -65,20 +65,8 @@
 				if (site != null)
 				{
 					// start recursing through the site's items
-					var usethiscrawler = Type.GetType(Configuration.Settings.CrawlerType);
-
-					if (usethiscrawler == null)
-					{
-						throw new ConfigurationErrorsException("web.config /configuration/spark/sitemapGenerator @crawler must contain a valid class identifier.");
-					}
-
+					var usethiscrawler = SitemapXmlHandlerConfiguration.Instance.CrawlerType;
 					var mycrawler = Activator.CreateInstance(usethiscrawler) as ICrawler;
-
-					if (mycrawler == null)
-					{
-						throw new ConfigurationErrorsException("web.config /configuration/spark/sitemapGenerator @crawler must contain a valid class identifier.");
-					}
-
 					mycrawler.Crawl(site, doc);
 				}
 
@@ -87,7 +75,7 @@
 				 * we can use a simpler absolute timeout rather than slaving to Sitecore Publishing. I selected 45min because
 				 * it is under the first time-based change frequency (hourly) reported by the document.
 				 */
-				int cachetime = int.Parse(Configuration.Settings.CacheTimeout);
+				int cachetime = SitemapXmlHandlerConfiguration.Instance.CacheTimeoutMinutes;
 				HttpRuntime.Cache.Insert(key, doc, null, DateTime.Now.AddMinutes(cachetime), System.Web.Caching.Cache.NoSlidingExpiration);
 			}
 
@@ -176,27 +164,7 @@
 		{
 			if (runtimeType == null)
 			{
-				var type = Configuration.Settings.SitemapNodeType;
-
-				try
-				{
-					// ReSharper disable AccessToStaticMemberViaDerivedType
-					runtimeType = TypeDelegator.GetType(type);
-					// ReSharper restore AccessToStaticMemberViaDerivedType
-				}
-				catch (BadImageFormatException ex)
-				{
-					/* 
-					 * The assembly or one of its dependencies is not valid.
-					 * 
-					 * or
-					 * 
-					 * the common language runtime is currently loaded, but the
-					 * assembly was compiled with a later version.
-					 */
-					global::Sitecore.Diagnostics.Log.Error("SitemapNodeType was invalid: " + ex.Message, typeof(SitemapGenerator));
-					runtimeType = typeof(DefaultSitemapNode);
-				}
+				runtimeType = SitemapXmlHandlerConfiguration.Instance.SitemapNodeType;
 			}
 		}
 		#endregion

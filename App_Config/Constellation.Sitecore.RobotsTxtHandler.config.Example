@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<!-- Place this section in your Web.Config
+	<configSections>
+		<sectionGroup name="Constellation" type="System.Configuration.ConfigurationSectionGroup, System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+			<section name="robotsTxtHandler" type="Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration, Constellation.Sitecore.Seo, Version=1.0.*, Culture=neutral, PublicKeyToken=null"/>
+		</sectionGroup>
+	</configSections>
+	<Constellation xmlns="urn:Constellation.Sitecore">
+		<robotsTxtHandler configSource="App_Config\Constellation.RobotsTxtHandler.config" />
+	</Constellation>
+	end Web.Config section -->
+	<Constellation xmlns="urn:Constellation.Sitecore">
+		<robotsTxtHandler allowed="true">
+			<robotRules>
+				<add name="googlebot" allowed="true"/>
+			</robotRules>
+		</robotsTxtHandler>
+	</Constellation>
+</configuration>

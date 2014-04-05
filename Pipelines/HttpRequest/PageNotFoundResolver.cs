@@ -23,7 +23,7 @@
 	/// </para>
 	/// <para>
 	/// Step 2: Create a Rendering (WebControl type) named "Not Found". Use the following WebControl:
-	/// <c>Constellation.Sitecore.Seo.Controls.HttpResponsesNotFound, Constellation.Sitecore</c>
+	/// <c>Constellation.Sitecore.Renderings.HttpResponsesNotFound, Constellation.Sitecore.Seo</c>
 	/// This control is necessary to set the 404 response code, which must be set during the rendering of the handling page.
 	/// </para>
 	/// <para>
@@ -36,7 +36,7 @@
 	/// </para>
 	/// <para>
 	/// 4.A: Install the following Processor in the HttpRequestBegin pipeline immediately after ItemResolver.
-	/// <c>&lt;processor type="Constellation.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Constellation.Sitecore" /&gt;</c>
+	/// <c>&lt;processor type="Constellation.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Constellation.Sitecore.Seo" /&gt;</c>
 	/// </para>
 	/// <para>
 	/// 4.B: Change the <c>ItemNotFoundUrl</c> setting value to match the root-relative path to your not-found item, 

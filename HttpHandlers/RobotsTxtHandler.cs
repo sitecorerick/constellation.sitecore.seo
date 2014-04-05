@@ -1,8 +1,8 @@
 ﻿namespace Constellation.Sitecore.HttpHandlers
 {
+	using Constellation.Sitecore.Seo;
 	using System.Text;
 	using System.Web;
-
 
 	/// <summary>
 	/// Handles requests for robots.txt and response with a reference to the hostname-specific
@@ -28,7 +28,7 @@
 		{
 			var builder = new StringBuilder();
 
-			var agents = RobotsTxt.Configuration.Settings.Agents;
+			var agents = RobotsTxtHandlerConfiguration.Instance.RobotRules;
 
 			for (int i = 0; i < agents.Count; i++)
 			{
@@ -44,7 +44,7 @@
 
 			builder.AppendLine("User-agent: *");
 
-			if (!RobotsTxt.Configuration.Settings.Allowed)
+			if (!RobotsTxtHandlerConfiguration.Instance.Allowed)
 			{
 				builder.AppendLine("Disallow: /");
 			}

@@ -7,15 +7,15 @@
     the code is regenerated.
 </auto-generated>
 -->
-<xs:schema xmlns:tns="urn:Constellation.Sitecore.App_Config.Schemas" elementFormDefault="qualified" targetNamespace="urn:Constellation.Sitecore.App_Config.Schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="urn:Constellation.Sitecore" elementFormDefault="qualified" targetNamespace="urn:Constellation.Sitecore" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:element name="Constellation" type="tns:Constellation.Sitecore.ConstellationCT" />
 	<xs:complexType name="Constellation.Sitecore.ConstellationCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
-			<xs:element minOccurs="0" maxOccurs="1" name="sitemapXmlHandler" type="tns:Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandlerCT" />
-			<xs:element minOccurs="0" maxOccurs="1" name="robotsTxtHandler" type="tns:Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandlerCT" />
+			<xs:element minOccurs="0" maxOccurs="1" name="sitemapXmlHandler" type="tns:Constellation.Sitecore.Seo.SitemapXmlHandlerConfigurationCT" />
+			<xs:element minOccurs="0" maxOccurs="1" name="robotsTxtHandler" type="tns:Constellation.Sitecore.Seo.RobotsTxtHandlerConfigurationCT" />
 		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="Constellation.Sitecore.App_Config.Schemas.SitemapXmlHandlerCT">
+	<xs:complexType name="Constellation.Sitecore.Seo.SitemapXmlHandlerConfigurationCT">
 		<xs:attribute name="sitemapNodeType" use="required">
 			<xs:annotation>
 				<xs:documentation>The SitemapNodeType.</xs:documentation>
@@ -32,9 +32,9 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:complexType name="Constellation.Sitecore.App_Config.Schemas.RobotsTxtHandlerCT">
+	<xs:complexType name="Constellation.Sitecore.Seo.RobotsTxtHandlerConfigurationCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
-			<xs:element minOccurs="0" name="robotRules" type="tns:Constellation.Sitecore.App_Config.Schemas.RobotRulesCT">
+			<xs:element minOccurs="0" name="robotRules" type="tns:Constellation.Sitecore.RobotRulesCT">
 				<xs:annotation>
 					<xs:documentation>The RobotRules.</xs:documentation>
 				</xs:annotation>
@@ -46,16 +46,26 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
-	<xs:complexType name="Constellation.Sitecore.App_Config.Schemas.RobotRulesCT">
+	<xs:complexType name="Constellation.Sitecore.RobotRulesCT">
 		<xs:choice minOccurs="0" maxOccurs="unbounded">
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="robotRule" type="tns:Constellation.Sitecore.App_Config.Schemas.RobotRuleCT">
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="clear" type="tns:Constellation.Sitecore.RobotRulesClearCT" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="remove" type="tns:Constellation.Sitecore.RobotRulesRemoveCT" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="add" type="tns:Constellation.Sitecore.RobotRuleCT">
 				<xs:annotation>
 					<xs:documentation>The RobotRule Configuration Element.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:choice>
 	</xs:complexType>
-	<xs:complexType name="Constellation.Sitecore.App_Config.Schemas.RobotRuleCT">
+	<xs:complexType name="Constellation.Sitecore.RobotRulesRemoveCT">
+		<xs:attribute name="name" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The Name.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Constellation.Sitecore.RobotRulesClearCT" />
+	<xs:complexType name="Constellation.Sitecore.RobotRuleCT">
 		<xs:attribute name="name" use="required" type="xs:string">
 			<xs:annotation>
 				<xs:documentation>The Name.</xs:documentation>
