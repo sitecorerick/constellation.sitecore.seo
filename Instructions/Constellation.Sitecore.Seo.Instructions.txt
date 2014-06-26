@@ -16,6 +16,29 @@ You must register the "Constellation.Sitecore.HttpHandlers.RobotsTxtHandler, Con
 An example config file is provided for the required Web.Config settings (aside from the handler assignment)
 This is a very simple handler. Assuming you're doing hostname routing, all hostnames will use the same robots.txt rules.
 
+
+Language Resolution
+-------------------
+
+Replace the default Sitecore LanguageResolver with "Constellation.Sitecore.Pipelines.HttpRequest.LanguageResolver, Constellation.Sitecore.Seo"
+Please see /App_Config/Include/HttpRequestPipeline.config.Example. Add "supportedLanguages" attributes to site definitions.
+Please see /App_Config/Include/Sites.SupportedLanguages.config.Example.
+
+
+Setting up Static Hostnames for Style Assets
+--------------------------------------------
+
+You can get significantly improved performance out of your page loads if the static assets for a site (CSS, Javascript and sprite files) are located
+on a different hostname from your Sitecore content. To implement this, utilize the ASP.NET WebForms compatible controls in the Renderings namespace:
+* Constellation.Sitecore.Renderings.StaticCssReference
+* Constellation.Sitecore.Renderings.StaticImage
+* Constellation.Sitecore.Renderings.StaticJavascriptReference
+
+These controls replace basic <link />, <img /> and <script /> tags, allowing you to supply relative paths during development, automatically switching
+to absolute paths if the Item's context Site definition includes the "staticHostName" attribute.
+Please see /App_Config/Include/Sites.StaticHostNameSupport.config.Example.
+
+
 Setting Url-Friendly Names on Sitecore Items
 --------------------------------------------
 Install a new custom rule action using "Constellation.Sitecore.Rules.Actions.SetUrlFriendlyName, Constellation.Sitecore.Seo"
@@ -31,7 +54,7 @@ IMPORTANT: Ensure your new Item Saved rule avoids "stock" Sitecore items such as
 404 Page Handling
 -----------------
 Install the "Constellation.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Constellation.Sitecore.Seo" pipeline handler after your ItemResolver
-in the Sitecore HttpRequest pipeline.
+in the Sitecore HttpRequest pipeline. Please see /App_Config/Include/HttpRequestPipeline.config.Example.
 
 In the instance where a URL represents an Item, but the Item does not exist,
 this pipeline handler will route the user to an Item defined in the content tree specifically
@@ -64,23 +87,29 @@ Web.Config changes (there are quite a few of them)
 
 	4.B: 
 	Change the ItemNotFoundUrl setting value to match the root-relative path to your not-found item, 
-		ex: /not-found.aspx
+		ex: /not-found
 
 	4.C: 
 	Change the LinkItemNotFoundUrl setting value to match the root-relative path to your not-found item.
-		ex: /not-found.aspx
+		ex: /not-found
 
-	4.D: 
+	4.D:
+	In the "sites" section of your configuration file, for each site in your installation, add an 
+	attribute named "notFoundPageItemPath" with the site-relative path
+	to the appropriate Item to handle the 404 condition. 
+	Please see /App_Config/Include/Sites.404Support.config.Example
+
+	4.E: 
 	Adjust your customErrors element to include a specific path for 404 errors, 
 	referencing the root-relative path to your not-found page.
 		ex: 
 		<customErrors mode="RemoteOnly">
-			<error statusCode="404" redirect="/not-found.aspx"/>
+			<error statusCode="404" redirect="/not-found"/>
 		</customErrors>
 
 	Alternately, set the redirect to "/default.aspx" which will cause IIS to shunt to Sitecore.
 
-	4.E: To preserve the URL in the browser's location bar, tell Sitecore to shunt server-side errors 
+	4.F: To preserve the URL in the browser's location bar, tell Sitecore to shunt server-side errors 
 	through Server.Transfer rather than Response.Redirect.
 	This is done by setting the "RequestErrors.UseServerSideRedirect" setting's value to "true".
 

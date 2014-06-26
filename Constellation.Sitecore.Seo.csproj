@@ -33,11 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Constellation.Html">
-      <HintPath>packages\Constellation.Html.1.5.5208.23634\lib\net45\Constellation.Html.dll</HintPath>
+      <HintPath>packages\Constellation.Html.1.5.5254.14092\lib\net45\Constellation.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Constellation.Sitecore, Version=1.5.5208.24086, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Constellation.Sitecore.1.5.5208.24086\lib\net45\Constellation.Sitecore.dll</HintPath>
+    <Reference Include="Constellation.Sitecore">
+      <HintPath>packages\Constellation.Sitecore.1.5.5256.20814\lib\net45\Constellation.Sitecore.dll</HintPath>
     </Reference>
     <Reference Include="Constellation.Web">
       <HintPath>packages\Constellation.Web.1.5.5208.23164\lib\net45\Constellation.Web.dll</HintPath>
@@ -47,7 +46,7 @@
       <HintPath>packages\Constellation.WebForms.1.5.5208.23871\lib\net45\Constellation.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\Diamond\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -62,12 +61,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
     </Compile>
+    <Compile Include="Renderings\StaticCssReference.cs" />
+    <Compile Include="Renderings\StaticFileReference.cs" />
+    <Compile Include="Pipelines\HttpRequest\LanguageResolver.cs" />
     <Compile Include="Renderings\HttpResponseNotFound.cs" />
     <Compile Include="HttpHandlers\RobotsTxtHandler.cs" />
     <Compile Include="HttpHandlers\SitemapXmlHandler.cs" />
     <Compile Include="Pipelines\HttpRequest\PageNotFoundResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ItemNameManager.cs" />
+    <Compile Include="Renderings\StaticImage.cs" />
+    <Compile Include="Renderings\StaticJavascriptReference.cs" />
     <Compile Include="Rules\Actions\SetUrlFriendlyName.cs" />
     <Compile Include="HttpHandlers\SitemapXml\ChangeFrequency.cs" />
     <Compile Include="HttpHandlers\SitemapXml\DefaultCrawler.cs" />
@@ -94,6 +98,10 @@
   <ItemGroup>
     <Content Include="App_Config\Constellation.Sitecore.RobotsTxtHandler.config.Example" />
     <Content Include="App_Config\Constellation.SitemapXmlHandler.config.Example" />
+    <Content Include="App_Config\Include\Sites.StaticHostNameSupport.config.Example" />
+    <Content Include="App_Config\Include\Sites.SupportedLanguages.config.Example" />
+    <Content Include="App_Config\Include\Sites.404Support.config.Example" />
+    <Content Include="App_Config\Include\HttpRequestPipeline.config.Example" />
     <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd">
       <Generator>CsdFileGenerator</Generator>
       <LastGenOutput>Constellation.Sitecore.Seo.csd.cs</LastGenOutput>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+The attribute "supportedLanguages" is used with the custom Language Resolver in this package.
+Use Sitecore Language item names, separated by pipe (|) characters. It is a good idea to include
+the default language for the site in this list, usually as the first entry.
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/"  xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+	<sitecore>
+		<sites>
+			<site name="example" patch:before="*[@name='website']"
+				hostName="www.your.website.domain.here"
+				targetHostName="www.your.website.domain.here"
+				mediaHostName="media.your.website.domain.here"
+				virtualFolder="/"
+				physicalFolder="/"
+				rootPath="/sitecore/content"
+				startItem="/home"
+				notFoundPageItemPath="/home/page-not-found"
+				language="en"
+				supportedLanguages="en|en-UK|fr|fr-CA|es|de"
+				database="web"
+				domain="extranet"
+				allowDebug="true"
+				cacheHtml="true"
+				enablePreview="true"
+				enableWebEdit="true"
+				enableDebugger="true"
+				disableClientData="false"
+				loginPage="/login.aspx"
+				formsRoot="{196D355B-1520-40B3-A7CE-1CD91064E90A}"
+				 />
+		</sites>
+	</sitecore>
+</configuration>

@@ -1,9 +1,11 @@
 ﻿namespace Constellation.Sitecore.Pipelines.HttpRequest
 {
-	using global::Sitecore.Configuration;
+	using global::Sitecore;
 	using global::Sitecore.Data.Items;
 	using global::Sitecore.Diagnostics;
 	using global::Sitecore.Pipelines.HttpRequest;
+	using System;
+	using System.Diagnostics.CodeAnalysis;
 	using System.Web;
 
 	/// <summary>
@@ -77,6 +79,7 @@
 	/// </list>
 	/// </para>
 	/// </remarks>
+	[SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
 	public class PageNotFoundResolver : HttpRequestProcessor
 	{
 		#region Methods
@@ -86,12 +89,12 @@
 		/// <param name="args">The arguments for this request.</param>
 		protected override void Execute(HttpRequestArgs args)
 		{
-			if (global::Sitecore.Context.Item != null)
+			if (Context.Item != null)
 			{
 				return;
 			}
 
-			var site = global::Sitecore.Context.Site;
+			var site = Context.Site;
 			if (site == null)
 			{
 				Log.Warn("PageNotFoundREsolver has no Site for: " + HttpContext.Current.Request.RawUrl, this);
@@ -104,7 +107,7 @@
 				return;
 			}
 
-			var language = global::Sitecore.Context.Language;
+			var language = Context.Language;
 			if (language == null)
 			{
 				Log.Warn("PageNotFoundResolver has no language for: " + HttpContext.Current.Request.RawUrl, this);
@@ -129,7 +132,7 @@
 
 			var context = args.Context;
 			context.Response.TrySkipIisCustomErrors = true;
-			global::Sitecore.Context.Item = page;
+			Context.Item = page;
 		}
 
 		/// <summary>
@@ -142,19 +145,20 @@
 		}
 
 		/// <summary>
-		/// Uses the Context Site and the Web.config to locate an appropriate Item to represent 404 page content.
+		/// Uses the Context Site and a custom property on the site definition to locate the appropriate
+		/// 404 page to make the context item.
 		/// </summary>
 		/// <returns>The Item to handle the request.</returns>
 		protected virtual Item Resolve404Item()
 		{
-			var db = global::Sitecore.Context.Database;
+			var notFoundPageItemPath = Context.Site.Properties["notFoundPageItemPath"];
 
-			if (db == null)
+			if (!notFoundPageItemPath.StartsWith("/sitecore/content", StringComparison.CurrentCultureIgnoreCase))
 			{
-				return null;
+				notFoundPageItemPath = Context.Site.StartPath + notFoundPageItemPath;
 			}
 
-			var pageNotFound = db.GetItem(global::Sitecore.Context.Site.StartPath + Settings.ItemNotFoundUrl);
+			var pageNotFound = Context.Database.SelectSingleItem(notFoundPageItemPath);
 			return pageNotFound;
 		}
 		#endregion

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+The attribute "staticHostName" is used with the StaticFileReference renderings in this package.
+Only the full hostname needs to be supplied. The controls will match the protocol and local paths
+at runtime. If no value is supplied, the paths will remain local to the Sitecore installation.
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/"  xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+	<sitecore>
+		<sites>
+			<site name="example" patch:before="*[@name='website']"
+				hostName="www.your.website.domain.here"
+				targetHostName="www.your.website.domain.here"
+				mediaHostName="media.your.website.domain.here"
+				staticHostName="static.your.website.domain.here"
+				virtualFolder="/"
+				physicalFolder="/"
+				rootPath="/sitecore/content"
+				startItem="/home"
+				notFoundPageItemPath="/home/page-not-found"
+				language="en"
+				supportedLanguages="en|en-UK|fr|fr-CA|es|de"
+				database="web"
+				domain="extranet"
+				allowDebug="true"
+				cacheHtml="true"
+				enablePreview="true"
+				enableWebEdit="true"
+				enableDebugger="true"
+				disableClientData="false"
+				loginPage="/login.aspx"
+				formsRoot="{196D355B-1520-40B3-A7CE-1CD91064E90A}"
+				 />
+		</sites>
+	</sitecore>
+</configuration>

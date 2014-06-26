@@ -14,12 +14,15 @@
 		is stronger for multi-site, multi-language installations.
 		
 		Features Included: 
+		Browser-based language detection and setting of the context language with the ability to generalize from a specific dialect to a fallback master
+		for a given language (ex: fr-CA will fall back to fr)
 		Multi-site 404 page subsystem that returns an actual 404 response code.
 		Automatic Robots.txt support - configurable for each Sitecore server in your installation.
 		Automatic Sitemap.xml support - fully multi-site capable; can be configured to support a wide array of information architectures.
 		Rule-based approach to ensuring that Sitecore Items get the most url-friendly name possible.
+		Site definition extension allowing for dynamic, site-based hostname resolution for static assets such as javsacript and CSS files.
 	</description>
-	<releaseNotes>Updated to Constellation 1.5</releaseNotes>
+	<releaseNotes>Improved site-specific 404 support, site-specific language switching support, static assets on a different hostname.</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore</tags>
   </metadata>
