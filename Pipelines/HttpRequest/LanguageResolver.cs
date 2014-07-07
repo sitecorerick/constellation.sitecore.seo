@@ -258,7 +258,7 @@
 
 			if (string.IsNullOrEmpty(languagesProperty))
 			{
-				return null;
+				return new[] { site.Language };
 			}
 
 			return languagesProperty.Split('|');
