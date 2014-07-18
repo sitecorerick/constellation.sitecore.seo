@@ -1,19 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
+
 	<!-- Place this section in your Web.Config
-	<configSections>
-		<sectionGroup name="Constellation" type="System.Configuration.ConfigurationSectionGroup, System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-			<section name="sitemapXmlHandler" type="Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration, Constellation.Sitecore.Seo, Version=1.0.*, Culture=neutral, PublicKeyToken=null"/>
-		</sectionGroup>
-	</configSections>
-	<Constellation xmlns="urn:Constellation.Sitecore">
-		<sitemapXmlHandler configSource="App_Config\Constellation.SitemapXmlHandler.config" />
-	</Constellation>
-	end Web.Config section -->
-	<Constellation xmlns="urn:Constellation.Sitecore">
-		<sitemapXmlHandler
-			crawlerType="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo"
-			sitemapNodeType="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultSitemapNode, Constellation.Sitecore.Seo"
-			cacheTimeoutMinutes="45" />
-	</Constellation>
-</configuration>
+<configSections>
+	<section name="sitemapXmlHandler" type="Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration, Constellation.Sitecore.Seo"/>
+</configSections>
+	
+<sitemapXmlHandler configSource="App_Config\Constellation.Sitecore.SitemapXmlHandler.config" />
+end Web.Config section -->
+
+<sitemapXmlHandler
+	crawlerType="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo"
+	sitemapNodeType="Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultSitemapNode, Constellation.Sitecore.Seo"
+	cacheTimeoutMinutes="45" />
+

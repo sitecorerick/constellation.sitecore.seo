@@ -56,11 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
-    </Compile>
+    <Compile Include="HttpHandlers\RobotsTxtHandlerConfiguration.cs" />
+    <Compile Include="HttpHandlers\RobotsTxtHandlerRule.cs" />
+    <Compile Include="HttpHandlers\RobotsTxtHandlerRuleCollection.cs" />
+    <Compile Include="HttpHandlers\SitemapXmlHandlerConfiguration.cs" />
     <Compile Include="Renderings\StaticCssReference.cs" />
     <Compile Include="Renderings\StaticFileReference.cs" />
     <Compile Include="Pipelines\HttpRequest\LanguageResolver.cs" />
@@ -89,9 +88,7 @@
     <Content Include="License\Constellation.Html.License.txt" />
     <Content Include="License\Constellation.Sitecore.License.txt" />
     <Content Include="License\Constellation.Sitecore.Seo.License.txt" />
-    <Content Include="Instructions\Constellation.Sitecore.Seo.Instructions.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Instructions\Constellation.Sitecore.Seo.Instructions.txt" />
     <Content Include="License\Constellation.Web.License.txt" />
     <Content Include="License\Constellation.WebForms.License.txt" />
   </ItemGroup>
@@ -102,20 +99,6 @@
     <Content Include="App_Config\Include\Sites.SupportedLanguages.config.Example" />
     <Content Include="App_Config\Include\Sites.404Support.config.Example" />
     <Content Include="App_Config\Include\HttpRequestPipeline.config.Example" />
-    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd">
-      <Generator>CsdFileGenerator</Generator>
-      <LastGenOutput>Constellation.Sitecore.Seo.csd.cs</LastGenOutput>
-    </None>
-    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.config">
-      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
-    </None>
-    <None Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.diagram">
-      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
-    </None>
-    <Content Include="App_Config\Schemas\Constellation.Sitecore.Seo.csd.xsd">
-      <DependentUpon>Constellation.Sitecore.Seo.csd</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Constellation.Sitecore.Seo.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>

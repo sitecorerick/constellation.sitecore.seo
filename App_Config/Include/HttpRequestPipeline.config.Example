@@ -8,7 +8,7 @@
 					<DatabasesToIgnore>core</DatabasesToIgnore>
 					<SitesToIgnore>admin, login, modules_shell, modules_website, publisher, scheduler, service, shell, system, testing, website</SitesToIgnore>
 				</processor>
-				<processor patch:after="*[@type='Sitecore.Pipelines.HttpRequest.LanguageResolver, Sitecore.Kernel']" type="Constellation.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Constellation.Sitecore.Seo">
+				<processor patch:after="*[@type='Sitecore.Pipelines.HttpRequest.ItemResolver, Sitecore.Kernel']" type="Constellation.Sitecore.Pipelines.HttpRequest.PageNotFoundResolver, Constellation.Sitecore.Seo">
 					<PathsToIgnore>/default, /~/icon, /~/link, /~/media, /maintenance, /sitecore, /sitecore modules, /_</PathsToIgnore>
 					<DatabasesToIgnore>core, master</DatabasesToIgnore>
 					<SitesToIgnore>admin, login, media, modules_shell, modules_website, publisher, scheduler, service, shell, system, testing, website</SitesToIgnore>

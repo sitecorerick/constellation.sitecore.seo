@@ -1,6 +1,5 @@
 ﻿namespace Constellation.Sitecore.HttpHandlers
 {
-	using Constellation.Sitecore.Seo;
 	using System.Text;
 	using System.Web;
 
@@ -28,14 +27,14 @@
 		{
 			var builder = new StringBuilder();
 
-			var agents = RobotsTxtHandlerConfiguration.Instance.RobotRules;
+			var rules = RobotsTxtHandlerConfiguration.Settings.Rules;
 
-			for (int i = 0; i < agents.Count; i++)
+			for (int i = 0; i < rules.Count; i++)
 			{
-				var agent = agents[i];
-				builder.AppendLine("UserAgent: " + agent.Name);
+				var rule = rules[i];
+				builder.AppendLine("UserAgent: " + rule.AgentName);
 
-				if (!agent.Allowed)
+				if (!rule.Allowed)
 				{
 					builder.AppendLine("Disallow: /");
 				}
@@ -44,7 +43,7 @@
 
 			builder.AppendLine("User-agent: *");
 
-			if (!RobotsTxtHandlerConfiguration.Instance.Allowed)
+			if (!RobotsTxtHandlerConfiguration.Settings.Allowed)
 			{
 				builder.AppendLine("Disallow: /");
 			}

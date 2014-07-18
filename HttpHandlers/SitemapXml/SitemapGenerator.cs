@@ -1,7 +1,5 @@
 ﻿namespace Constellation.Sitecore.HttpHandlers.SitemapXml
 {
-	using Constellation.Sitecore.Seo;
-
 	using global::Sitecore.Data.Items;
 	using global::Sitecore.Sites;
 	using System;
@@ -65,9 +63,11 @@
 				if (site != null)
 				{
 					// start recursing through the site's items
-					var usethiscrawler = SitemapXmlHandlerConfiguration.Instance.CrawlerType;
+					var usethiscrawler = SitemapXmlHandlerConfiguration.Settings.CrawlerType;
 					var mycrawler = Activator.CreateInstance(usethiscrawler) as ICrawler;
+					// ReSharper disable PossibleNullReferenceException
 					mycrawler.Crawl(site, doc);
+					// ReSharper restore PossibleNullReferenceException
 				}
 
 				/* 
@@ -75,7 +75,7 @@
 				 * we can use a simpler absolute timeout rather than slaving to Sitecore Publishing. I selected 45min because
 				 * it is under the first time-based change frequency (hourly) reported by the document.
 				 */
-				int cachetime = SitemapXmlHandlerConfiguration.Instance.CacheTimeoutMinutes;
+				int cachetime = SitemapXmlHandlerConfiguration.Settings.CacheTimeoutMinutes;
 				HttpRuntime.Cache.Insert(key, doc, null, DateTime.Now.AddMinutes(cachetime), System.Web.Caching.Cache.NoSlidingExpiration);
 			}
 
@@ -164,7 +164,7 @@
 		{
 			if (runtimeType == null)
 			{
-				runtimeType = SitemapXmlHandlerConfiguration.Instance.SitemapNodeType;
+				runtimeType = SitemapXmlHandlerConfiguration.Settings.SitemapNodeType;
 			}
 		}
 		#endregion
