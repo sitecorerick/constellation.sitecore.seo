@@ -22,7 +22,7 @@
 		Rule-based approach to ensuring that Sitecore Items get the most url-friendly name possible.
 		Site definition extension allowing for dynamic, site-based hostname resolution for static assets such as javsacript and CSS files.
 	</description>
-	<releaseNotes>Fixed some bugs around the configuration files. It's a new schema and new file names. Check your examples carefully.</releaseNotes>
+	<releaseNotes>Typos in the example configs are fixed.</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore</tags>
   </metadata>

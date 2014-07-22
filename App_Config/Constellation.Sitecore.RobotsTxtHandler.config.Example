@@ -2,7 +2,7 @@
 
 <!-- Place this section in your Web.Config
 <configSections>
-	<section name="robotsTxtHandler" type="Constellation.Sitecore.Seo.RobotsTxtHandlerConfiguration, Constellation.Sitecore.Seo"/>
+	<section name="robotsTxtHandler" type="Constellation.Sitecore.RobotsTxtHandlerConfiguration, Constellation.Sitecore.Seo"/>
 </configSections>
 
 <robotsTxtHandler configSource="App_Config\Constellation.Sitecore.RobotsTxtHandler.config" />

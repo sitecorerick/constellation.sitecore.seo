@@ -2,7 +2,7 @@
 
 	<!-- Place this section in your Web.Config
 <configSections>
-	<section name="sitemapXmlHandler" type="Constellation.Sitecore.Seo.SitemapXmlHandlerConfiguration, Constellation.Sitecore.Seo"/>
+	<section name="sitemapXmlHandler" type="Constellation.Sitecore.SitemapXmlHandlerConfiguration, Constellation.Sitecore.Seo"/>
 </configSections>
 	
 <sitemapXmlHandler configSource="App_Config\Constellation.Sitecore.SitemapXmlHandler.config" />

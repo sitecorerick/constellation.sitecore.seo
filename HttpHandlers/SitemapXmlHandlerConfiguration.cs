@@ -40,7 +40,7 @@
 		/// <summary>
 		/// Gets the crawler type.
 		/// </summary>
-		[ConfigurationProperty("crawlerType", DefaultValue = "Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultCrawler, Constellation.Sitecore.Seo", IsRequired = true)]
+		[ConfigurationProperty("crawlerType", IsRequired = true)]
 		public Type CrawlerType
 		{
 			get
@@ -53,7 +53,7 @@
 		/// <summary>
 		/// Gets the sitemap node type.
 		/// </summary>
-		[ConfigurationProperty("sitemapNodeType", DefaultValue = "Constellation.Sitecore.HttpHandlers.SitemapXml.DefaultSitemapNode, Constellation.Sitecore.Seo", IsRequired = true)]
+		[ConfigurationProperty("sitemapNodeType", IsRequired = true)]
 		public Type SitemapNodeType
 		{
 			get
