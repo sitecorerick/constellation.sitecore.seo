@@ -63,7 +63,7 @@
 				if (site != null)
 				{
 					// start recursing through the site's items
-					var usethiscrawler = SitemapXmlHandlerConfiguration.Settings.CrawlerType;
+					var usethiscrawler = Type.GetType(SitemapXmlHandlerConfiguration.Settings.CrawlerType);
 					var mycrawler = Activator.CreateInstance(usethiscrawler) as ICrawler;
 					// ReSharper disable PossibleNullReferenceException
 					mycrawler.Crawl(site, doc);
@@ -164,7 +164,7 @@
 		{
 			if (runtimeType == null)
 			{
-				runtimeType = SitemapXmlHandlerConfiguration.Settings.SitemapNodeType;
+				runtimeType = Type.GetType(SitemapXmlHandlerConfiguration.Settings.SitemapNodeType);
 			}
 		}
 		#endregion

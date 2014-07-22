@@ -1,6 +1,5 @@
 ﻿namespace Constellation.Sitecore.HttpHandlers
 {
-	using System;
 	using System.Configuration;
 
 	/// <summary>
@@ -41,12 +40,11 @@
 		/// Gets the crawler type.
 		/// </summary>
 		[ConfigurationProperty("crawlerType", IsRequired = true)]
-		public Type CrawlerType
+		public string CrawlerType
 		{
 			get
 			{
-				var type = (string)base["crawlerType"];
-				return Type.GetType(type);
+				return (string)base["crawlerType"];
 			}
 		}
 
@@ -54,12 +52,11 @@
 		/// Gets the sitemap node type.
 		/// </summary>
 		[ConfigurationProperty("sitemapNodeType", IsRequired = true)]
-		public Type SitemapNodeType
+		public string SitemapNodeType
 		{
 			get
 			{
-				var type = (string)base["sitemapNodeType"];
-				return Type.GetType(type);
+				return (string)base["sitemapNodeType"];
 			}
 		}
 
