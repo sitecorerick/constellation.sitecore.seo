@@ -68,15 +68,7 @@
 		{
 			get
 			{
-				var minutes = (string)base["cacheTimeoutMinutes"];
-				int value;
-
-				if (int.TryParse(minutes, out value))
-				{
-					return value;
-				}
-
-				return 45;
+				return (int)base["cacheTimeoutMinutes"];
 			}
 		}
 	}
