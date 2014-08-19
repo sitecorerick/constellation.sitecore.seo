@@ -33,3 +33,6 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("2.2.*")]
 [assembly: AssemblyFileVersion("2.2.*")]
+
+/* <%@ Register TagPrefix="constellation" Namespace="Constellation.Sitecore.Renderings" Assembly="Constellation.Sitecore.Seo" %> */
+[assembly: System.Web.UI.TagPrefix("Constellation.Sitecore.Renderings", "constellation")]
