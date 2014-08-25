@@ -32,11 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Constellation.Html">
-      <HintPath>packages\Constellation.Html.1.5.5254.14092\lib\net45\Constellation.Html.dll</HintPath>
+    <Reference Include="Constellation.Html, Version=1.7.5330.21682, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Constellation.Html.1.7.5330.21682\lib\net45\Constellation.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Constellation.Sitecore">
-      <HintPath>packages\Constellation.Sitecore.1.5.5256.20814\lib\net45\Constellation.Sitecore.dll</HintPath>
+    <Reference Include="Constellation.Sitecore, Version=1.7.5350.25752, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Constellation.Sitecore.1.7.5350.25752\lib\net45\Constellation.Sitecore.dll</HintPath>
     </Reference>
     <Reference Include="Constellation.Web">
       <HintPath>packages\Constellation.Web.1.5.5208.23164\lib\net45\Constellation.Web.dll</HintPath>
