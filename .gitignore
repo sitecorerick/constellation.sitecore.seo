@@ -13,6 +13,7 @@ Thumbs.db
 [Tt]est[Rr]esult*
 *.Web/[Ww]eb.[Cc]onfig
 *.nupkg
+[Nn]u[Gg]et.exe
 
 #extensions
 *_i.c
