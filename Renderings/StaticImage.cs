@@ -36,7 +36,7 @@
 		/// <param name="output">The response writer.</param>
 		protected override void DoRender(HtmlTextWriter output)
 		{
-			output.RenderImg(this.GetAbsoluteUrl(this.Src), this.Alt);
+			output.RenderImg(this.GetAbsoluteUrl(this.Src), this.Alt, cssClass: this.CssClass);
 		}
 	}
 }

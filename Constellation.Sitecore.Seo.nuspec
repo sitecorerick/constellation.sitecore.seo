@@ -22,7 +22,7 @@
 		Rule-based approach to ensuring that Sitecore Items get the most url-friendly name possible.
 		Site definition extension allowing for dynamic, site-based hostname resolution for static assets such as javsacript and CSS files.
 	</description>
-	<releaseNotes>Updated all Constellation core libraries.</releaseNotes>
+	<releaseNotes>Fixed a typo in SitemapGenerator</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore</tags>
   </metadata>

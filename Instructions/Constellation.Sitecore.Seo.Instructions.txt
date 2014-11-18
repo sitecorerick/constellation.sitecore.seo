@@ -7,6 +7,9 @@ You must set ASP.NET to process all requests.
 You must register the "Constellation.Sitecore.HttpHandlers.SitemapXmlHandler, Constellation.Sitecore.Seo" to handle requests for "sitemap.xml".
 An example config file is provided for the required Web.Config settings (aside from the handler assignment)
 You will likely want to create your own SitemapNode class and possibly your own Crawler class. These must decend from ISitemapNode and ICrawler.
+For multiple site crawler support, add sitemapCrawlerType="my.crawler.type.name, assembly" to your Sitecore site definitions. If no site-specific crawler
+is defined, the one in the config file will be used. To specify a unique Sitemap Node type for each site, add a parameter named sitemapNodeType to your Sitecore
+site definitions. if no site-specific node type is found, the one in the config file will be used.
 
 
 Robots.txt support

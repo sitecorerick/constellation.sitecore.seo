@@ -1,7 +1,9 @@
 ﻿namespace Constellation.Sitecore.HttpHandlers.SitemapXml
 {
 	using global::Sitecore.Data.Items;
+	using global::Sitecore.Sites;
 	using System;
+	using System.Diagnostics.CodeAnalysis;
 
 	/// <summary>
 	/// Represents a candidate element for the sitemap.xml file.
@@ -33,11 +35,13 @@
 		/// <summary>
 		/// Internal storage for the Is Page flag.
 		/// </summary>
+		[SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
 		private bool isPage;
 
 		/// <summary>
 		/// Internal storage for the Is Listed in Navigation flag.
 		/// </summary>
+		[SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Reviewed. Suppression is OK here.")]
 		private bool isListedInNavigation;
 
 		/// <summary>
@@ -64,6 +68,7 @@
 		/// Internal storage for Last Modified.
 		/// Default value is SqlDateTime.MinValue.
 		/// </summary>
+		[SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
 		private DateTime lastModified = (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue;
 
 		/// <summary>
@@ -77,10 +82,16 @@
 		/// Initializes a new instance of the <see cref="SitemapNode&lt;T&gt;"/> class based on
 		/// the Item supplied.
 		/// </summary>
-		/// <param name="item">The Sitecore Item to interrogate.</param>
-		protected SitemapNode(Item item)
+		/// <param name="item">
+		/// The Sitecore Item to interrogate.
+		/// </param>
+		/// <param name="site">
+		/// The site.
+		/// </param>
+		protected SitemapNode(Item item, SiteContext site)
 		{
 			this.item = item;
+			this.Site = site;
 		}
 		#endregion
 
@@ -96,6 +107,11 @@
 				return this.changeFrequency;
 			}
 		}
+
+		/// <summary>
+		/// Gets the site.
+		/// </summary>
+		public SiteContext Site { get; private set; }
 
 		/// <summary>
 		/// Gets a value indicating whether the page is listed in site navigation.
@@ -166,6 +182,7 @@
 		/// Gets the date on which the content of this page was modified.
 		/// Default is SqlDateTime.MinValue.
 		/// </summary>
+		[SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
 		public DateTime LastModified
 		{
 			get

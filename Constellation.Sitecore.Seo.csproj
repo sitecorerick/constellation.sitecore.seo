@@ -36,9 +36,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Constellation.Html.1.7.5330.21682\lib\net45\Constellation.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Constellation.Sitecore, Version=1.7.5350.25752, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Constellation.Sitecore, Version=1.8.5409.24921, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Constellation.Sitecore.1.7.5350.25752\lib\net45\Constellation.Sitecore.dll</HintPath>
+      <HintPath>packages\Constellation.Sitecore.1.8.5409.24921\lib\net45\Constellation.Sitecore.dll</HintPath>
     </Reference>
     <Reference Include="Constellation.Web">
       <HintPath>packages\Constellation.Web.1.5.5208.23164\lib\net45\Constellation.Web.dll</HintPath>
@@ -49,6 +49,7 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -95,13 +96,17 @@
     <Content Include="License\Constellation.WebForms.License.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Constellation.Sitecore.RobotsTxtHandler.config.Example" />
+    <Content Include="App_Config\Constellation.Sitecore.RobotsTxtHandler.config.Example">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Config\Constellation.SitemapXmlHandler.config.Example" />
     <Content Include="App_Config\Include\Sites.StaticHostNameSupport.config.Example" />
     <Content Include="App_Config\Include\Sites.SupportedLanguages.config.Example" />
     <Content Include="App_Config\Include\Sites.404Support.config.Example" />
     <Content Include="App_Config\Include\HttpRequestPipeline.config.Example" />
-    <None Include="Constellation.Sitecore.Seo.nuspec" />
+    <None Include="Constellation.Sitecore.Seo.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

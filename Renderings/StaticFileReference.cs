@@ -17,7 +17,7 @@
 		/// return the hostname to use based upon the Sitecore context site definition.
 		/// </summary>
 		/// <returns>the hostname to use.</returns>
-		protected string GetHostname()
+		protected virtual string GetHostname()
 		{
 			return global::Sitecore.Context.Site.Properties["staticHostName"];
 		}

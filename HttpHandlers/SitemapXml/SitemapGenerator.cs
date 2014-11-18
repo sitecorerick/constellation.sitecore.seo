@@ -13,13 +13,6 @@
 	/// </summary>
 	public static class SitemapGenerator
 	{
-		#region Fields
-		/// <summary>
-		/// Internal (application lifetime) type to use for SitemapNode.
-		/// </summary>
-		private static Type runtimeType;
-		#endregion
-
 		/// <summary>
 		/// Creates the sitemap.xml document, ready for streaming to the response.
 		/// </summary>
@@ -62,8 +55,21 @@
 				// Regardless of whether we find a site, we will return a document, it will be empty if Sitecore can't figure out what host to map to.
 				if (site != null)
 				{
+					var siteCrawler = site.Properties["sitemapCrawlerType"];
+
+					Type usethiscrawler;
+
+					if (!string.IsNullOrEmpty(siteCrawler))
+					{
+						usethiscrawler = Type.GetType(siteCrawler);
+					}
+					else
+					{
+						usethiscrawler = Type.GetType(SitemapXmlHandlerConfiguration.Settings.CrawlerType);
+					}
+
 					// start recursing through the site's items
-					var usethiscrawler = Type.GetType(SitemapXmlHandlerConfiguration.Settings.CrawlerType);
+					// ReSharper disable once AssignNullToNotNullAttribute
 					var mycrawler = Activator.CreateInstance(usethiscrawler) as ICrawler;
 					// ReSharper disable PossibleNullReferenceException
 					mycrawler.Crawl(site, doc);
@@ -83,24 +89,6 @@
 		}
 
 		#region Data Retrieval
-
-		/// <summary>
-		/// Creates an instance of ISitemapNode from the Type defined in the Sitemap Configuration Section
-		/// of the config file.
-		/// </summary>
-		/// <param name="item">The Sitecore Item to use when initializing the ISitemapNode.</param>
-		/// <returns>An instance of ISitemapNode based on the supplied Item and the node Type specified in the config file.</returns>
-		public static ISitemapNode CreateNode(Item item)
-		{
-			EnsureRuntimeTypeIsSet();
-
-			var args = new object[] { item };
-
-			var node = Activator.CreateInstance(runtimeType, args);
-
-			return node as ISitemapNode;
-		}
-
 		/// <summary>
 		/// Creates an instance of ISitemapNode from the Type defined in the Sitemap Configuration Section
 		/// of the config file.
@@ -108,19 +96,30 @@
 		/// <param name="item">
 		/// The Sitecore Item to use when initializing the ISitemapNode.
 		/// </param>
-		/// <param name="siteContext">
-		/// The site context.
+		/// <param name="site">
+		/// The site.
 		/// </param>
 		/// <returns>
 		/// An instance of ISitemapNode based on the supplied Item and the node Type specified in the config file.
 		/// </returns>
-		public static ISitemapNode CreateNode(Item item, SiteContext siteContext)
+		public static ISitemapNode CreateNode(Item item, SiteContext site)
 		{
-			EnsureRuntimeTypeIsSet();
+			var siteNode = site.Properties["sitemapNodeType"];
+			Type nodeType;
 
-			var args = new object[] { item, siteContext };
+			if (!string.IsNullOrEmpty(siteNode))
+			{
+				nodeType = Type.GetType(siteNode);
+			}
+			else
+			{
+				nodeType = Type.GetType(SitemapXmlHandlerConfiguration.Settings.SitemapNodeType);
+			}
 
-			var node = Activator.CreateInstance(runtimeType, args);
+			var args = new object[] { item, site };
+
+			// ReSharper disable once AssignNullToNotNullAttribute
+			var node = Activator.CreateInstance(nodeType, args);
 
 			return node as ISitemapNode;
 		}
@@ -154,18 +153,6 @@
 			// ReSharper disable PossibleNullReferenceException
 			doc.DocumentElement.AppendChild(url);
 			// ReSharper restore PossibleNullReferenceException
-		}
-
-		/// <summary>
-		/// Retrieves the type of ISitemapNode to use for this application from the config file. If the
-		/// config file does not contain a type reference, the DefaultSitemapNode type will be used.
-		/// </summary>
-		private static void EnsureRuntimeTypeIsSet()
-		{
-			if (runtimeType == null)
-			{
-				runtimeType = Type.GetType(SitemapXmlHandlerConfiguration.Settings.SitemapNodeType);
-			}
 		}
 		#endregion
 

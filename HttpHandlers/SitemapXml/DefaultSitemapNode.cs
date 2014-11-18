@@ -4,7 +4,6 @@
 	using global::Sitecore.Links;
 	using global::Sitecore.Sites;
 	using System;
-	using System.Web;
 
 	/// <summary>
 	/// Represents a candidate element for the sitemap.xml file.
@@ -14,9 +13,14 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DefaultSitemapNode"/> class.
 		/// </summary>
-		/// <param name="item">The item to be considered for a node.</param>
-		public DefaultSitemapNode(Item item)
-			: base(item)
+		/// <param name="item">
+		/// The item to be considered for a node.
+		/// </param>
+		/// <param name="site">
+		/// The site.
+		/// </param>
+		public DefaultSitemapNode(Item item, SiteContext site)
+			: base(item, site)
 		{
 			// shut up Stylecop
 		}
@@ -73,8 +77,7 @@
 		{
 			var options = LinkManager.GetDefaultUrlOptions();
 			options.AlwaysIncludeServerUrl = true;
-			var context = HttpContext.Current;
-			options.Site = SiteContextFactory.GetSiteContext(context.Request.Url.Host, context.Request.Url.LocalPath, context.Request.Url.Port);
+			options.Site = this.Site;
 
 			if (item.Language.CultureInfo.Name.Equals(options.Site.Language, StringComparison.OrdinalIgnoreCase))
 			{

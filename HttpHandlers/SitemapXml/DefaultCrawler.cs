@@ -38,7 +38,7 @@
 				{
 					foreach (var item in items)
 					{
-						var node = SitemapGenerator.CreateNode(item);
+						var node = SitemapGenerator.CreateNode(item, site);
 
 						if (node.IsPage && node.IsListedInNavigation && node.ShouldIndex)
 						{
