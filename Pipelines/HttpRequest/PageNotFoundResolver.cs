@@ -3,6 +3,7 @@
 	using global::Sitecore;
 	using global::Sitecore.Data.Items;
 	using global::Sitecore.Diagnostics;
+	using global::Sitecore.IO;
 	using global::Sitecore.Pipelines.HttpRequest;
 	using System;
 	using System.Diagnostics.CodeAnalysis;
@@ -155,7 +156,7 @@
 
 			if (!notFoundPageItemPath.StartsWith("/sitecore/content", StringComparison.CurrentCultureIgnoreCase))
 			{
-				notFoundPageItemPath = Context.Site.StartPath + notFoundPageItemPath;
+				notFoundPageItemPath = FileUtil.MakePath(Context.Site.RootPath, notFoundPageItemPath);
 			}
 
 			var pageNotFound = Context.Database.SelectSingleItem(notFoundPageItemPath);
