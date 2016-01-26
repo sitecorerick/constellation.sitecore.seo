@@ -32,20 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Constellation.Html, Version=1.7.5330.21682, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Constellation.Html, Version=3.0.5519.21831, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Constellation.Html.1.7.5330.21682\lib\net45\Constellation.Html.dll</HintPath>
+      <HintPath>packages\Constellation.Html.3.0.5519.21831\lib\net45\Constellation.Html.dll</HintPath>
     </Reference>
-    <Reference Include="Constellation.Sitecore, Version=1.8.5409.24921, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Constellation.Sitecore, Version=3.0.5519.22168, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Constellation.Sitecore.1.8.5409.24921\lib\net45\Constellation.Sitecore.dll</HintPath>
+      <HintPath>packages\Constellation.Sitecore.3.0.5519.22168\lib\net45\Constellation.Sitecore.dll</HintPath>
     </Reference>
-    <Reference Include="Constellation.Web">
-      <HintPath>packages\Constellation.Web.1.5.5208.23164\lib\net45\Constellation.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Constellation.WebForms, Version=1.5.5208.23871, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Constellation.Web, Version=3.0.5519.21704, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Constellation.WebForms.1.5.5208.23871\lib\net45\Constellation.WebForms.dll</HintPath>
+      <HintPath>packages\Constellation.Web.3.0.5519.21704\lib\net45\Constellation.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Constellation.WebForms, Version=3.0.5519.21934, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Constellation.WebForms.3.0.5519.21934\lib\net45\Constellation.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\_Binaries\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -99,7 +100,7 @@
     <Content Include="App_Config\Constellation.Sitecore.RobotsTxtHandler.config.Example">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Constellation.SitemapXmlHandler.config.Example" />
+    <Content Include="App_Config\Constellation.Sitecore.SitemapXmlHandler.config.Example" />
     <Content Include="App_Config\Include\Sites.StaticHostNameSupport.config.Example" />
     <Content Include="App_Config\Include\Sites.SupportedLanguages.config.Example" />
     <Content Include="App_Config\Include\Sites.404Support.config.Example" />

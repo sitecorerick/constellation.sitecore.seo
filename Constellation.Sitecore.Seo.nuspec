@@ -22,7 +22,7 @@
 		Rule-based approach to ensuring that Sitecore Items get the most url-friendly name possible.
 		Site definition extension allowing for dynamic, site-based hostname resolution for static assets such as javsacript and CSS files.
 	</description>
-	<releaseNotes>Made PageNotFoundResolver's site-specific path searching more natural by enforcing the inclusion of the site item in the path of the property. ex: /home/not-found</releaseNotes>
+	<releaseNotes>Set up UriBuilder to remove the port number from URLs in DefaultSitemapNode</releaseNotes>
 	<copyright>Copyright 2014</copyright>
 	<tags>Sitecore</tags>
   </metadata>

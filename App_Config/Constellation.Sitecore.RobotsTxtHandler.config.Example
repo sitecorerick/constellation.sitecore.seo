@@ -10,8 +10,6 @@
 end Web.Config section -->
 
 <robotsTxtHandler allowed="true">
-	<robotRules>
-		<add agentName="googlebot" allowed="true"/>
-	</robotRules>
+	<add agentName="googlebot" allowed="true"/>
 </robotsTxtHandler>
 

@@ -88,7 +88,11 @@
 				options.LanguageEmbedding = LanguageEmbedding.AsNeeded;
 			}
 
-			return LinkManager.GetItemUrl(item, options);
+			var url = new Uri(LinkManager.GetItemUrl(item, options));
+
+			var builder = new UriBuilder(url);
+			builder.Port = -1;
+			return builder.Uri.AbsoluteUri;
 		}
 
 		/// <summary>
