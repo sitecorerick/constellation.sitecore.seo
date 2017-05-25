@@ -69,7 +69,7 @@
 				string name;
 				if (ItemNameManager.GetLocallyUniqueItemName(ruleContext.Item, this.IllegalCharacterRegEx, this.RemoveSpaces, this.ChangeCase, this.ReplaceDiacritics, out name))
 				{
-					using (new EditContext(ruleContext.Item))
+					using (new EditContext(ruleContext.Item, false, true))
 					{
 						ruleContext.Item.Name = name;
 
